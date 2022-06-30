@@ -50,7 +50,6 @@ const App = () => {
 
   return (
     <div className="App">
-      {console.log(courses[0])}
       {courses.map(course => <Course course={course}/>)}
     </div>
   );
