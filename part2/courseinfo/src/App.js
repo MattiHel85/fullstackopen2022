@@ -20,7 +20,9 @@ const Content = ({course}) => {
   )
 }
 const Total = ({course}) => {
-  return <p>Number of exercises: {course.parts[0].exercises + course.parts[0].exercises + course.parts[0].exercises}</p>
+  const total = course.parts.reduce((prevValue, currentValue) => prevValue + currentValue.exercises, 0)
+  console.log('The total is', total)
+  return <p>Number of exercises: {total}</p>
 }
 
 const Course = ({course}) => {
@@ -58,25 +60,6 @@ const App = () => {
       }
     ]
   }  
-
-  // console.log('App works...')
-
-  // // const course = 'Half Stack application development'
-
-  // const parts = [
-  //   {
-  //     name: 'Fundamentals of React',
-  //     exercises: 10
-  //   },
-  //   {
-  //     name: 'Using props to pass data',
-  //     exercises: 7
-  //   },
-  //   {
-  //     name: 'State of a component',
-  //     exercises: 14
-  //   }
-  // ]
 
   return (
     <div className="App">
